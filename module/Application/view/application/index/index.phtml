@@ -1,8 +1,37 @@
-<div class="jumbotron">
-    <h1><?php echo sprintf($this->translate('Welcome to %sZend Framework 2%s'), '<span class="zf-green">', '</span>') ?></h1>
-    <p><?php echo sprintf($this->translate('Congratulations! You have successfully installed the %sZF2 Skeleton Application%s. You are currently running Zend Framework version %s. This skeleton can serve as a simple starting point for you to begin building your application on ZF2.'), '<a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">', '</a>', \Zend\Version\Version::VERSION) ?></p>
-    <p><a class="btn btn-success btn-lg" href="https://github.com/zendframework/zf2" target="_blank"><?php echo $this->translate('Fork Zend Framework 2 on GitHub') ?> &raquo;</a></p>
-</div>
+<div class="container">
+            <!-- espacio para el carrusel-->
+            <section id="miSlide" class="carousel slide">
+                <!--circulos indicadores-->
+             <ol class="carousel-indicators">
+                <li data-target="#miSlide" data-slide-to="0" class="active"></li>
+                <li data-target="#miSlide" data-slide-to="1"></li>
+                <li data-target="#miSlide" data-slide-to="2"></li>
+                <li data-target="#miSlide" data-slide-to="3"></li>
+             </ol>
+             <!--contenido del slider-->
+             <div class="carousel-inner">
+                <div class="item active">
+                    <img src="<?php echo $this->basePath('img/slide1.jpg') ?>" class="adaptar">
+                </div>
+                <div class="item">
+                    <img src="<?php echo $this->basePath('img/slide2_.jpg') ?>" class="adaptar">
+                </div>
+                <div class="item">
+                    <img src="<?php echo $this->basePath('img/slide3_.jpg') ?>" class="adaptar">
+                </div>
+                <div class="item">
+                    <img src="<?php echo $this->basePath('img/slide4.jpg') ?>" class="adaptar">
+                </div>
+             </div>
+             <!--controles, flechas para desplazarse-->
+             <a class="left carousel-control" href="#miSlide" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+             </a>
+             <a class="right carousel-control" href="#miSlide" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+             </a>
+            </section>
+            <br/>
 
 <div class="row">
 
