@@ -1,7 +1,15 @@
-//por david
-.row1{background-color: #a6e1ec}
+/*David*/
+.tuto{ background-color: #bce8f1;
+font-size: 20px;
+}
 
-//-------------
+.rojo{
+    background-color: lightsteelblue;
+    margin: 15px auto 0 auto;
+}
+/*---*/
+
+
 .header {
         background-color: #269abc;
         background-image: url(../img/banner1.jpg);
