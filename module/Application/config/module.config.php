@@ -43,7 +43,18 @@ return array(
                     ),
                 ),
             ),
-   
+
+               'calendario' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/calendario',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Calendario',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+
             
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
@@ -106,6 +117,10 @@ return array(
              'label' => 'Disertantes',
              'route' => 'disertantes',
          ),
+         array(
+             'label' => 'Calendario',
+             'route' => 'calendario',
+         ),
      ),
  ),
     
@@ -126,7 +141,8 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Ponencias' => 'Application\Controller\PonenciasController',
-            'Application\Controller\Disertantes' => 'Application\Controller\DisertantesController'
+            'Application\Controller\Disertantes' => 'Application\Controller\DisertantesController',
+            'Application\Controller\Calendario' => 'Application\Controller\CalendarioController'
         ),
     ),
     'view_manager' => array(
