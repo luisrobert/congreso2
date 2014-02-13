@@ -10,6 +10,7 @@
 return array(
     'router' => array(
         'routes' => array(
+            //ruta para home
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
@@ -19,7 +20,31 @@ return array(
                         'action'     => 'index',
                     ),
                 ),
+                ),
+                
+               'ponencias' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/ponencias',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Ponencias',
+                        'action' => 'index'
+                    ),
+                ),
             ),
+        
+               'disertantes' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/disertantes',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Disertantes',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+   
+            
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -53,15 +78,41 @@ return array(
         ),
     ),
     'service_manager' => array(
+        'factories' => array(
+             'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+         ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
+ //           'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
+        
     ),
+    
+    'navigation' => array(
+     'default' => array(
+         array(
+             'label' => 'Home',
+             'route' => 'home',
+         ),
+         array(
+             'label' => 'Ponencias',
+             'route' => 'ponencias',
+         ),
+         array(
+             'label' => 'Disertantes',
+             'route' => 'disertantes',
+         ),
+     ),
+ ),
+    
+    
+    
     'translator' => array(
+        
         'locale' => 'en_US',
         'translation_file_patterns' => array(
             array(
@@ -73,7 +124,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Ponencias' => 'Application\Controller\PonenciasController',
+            'Application\Controller\Disertantes' => 'Application\Controller\DisertantesController'
         ),
     ),
     'view_manager' => array(
