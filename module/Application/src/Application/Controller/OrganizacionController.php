@@ -18,6 +18,9 @@ class OrganizacionController extends AbstractActionController
     {
         return new ViewModel();
     }
-    
+    public function mapaAction()
+    {
+        return new ViewModel();
+    }
 
 }

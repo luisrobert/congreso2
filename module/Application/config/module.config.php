@@ -149,6 +149,13 @@ return array(
          array(
              'label' => 'Organizacion',
              'route' => 'organizacion',
+             'pages' => array(
+                array(
+                    'label' => 'Mapa',
+                    'route' => 'organizacion',
+                    'action' => 'mapa',
+                ),
+               ),  
          ),
      ),
  ),
