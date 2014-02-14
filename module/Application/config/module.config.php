@@ -55,6 +55,27 @@ return array(
                 ),
             ),
 
+               'costos' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/costos',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Costos',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            
+           'organizacion' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/organizacion',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Organizacion',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
             
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
@@ -121,6 +142,14 @@ return array(
              'label' => 'Calendario',
              'route' => 'calendario',
          ),
+         array(
+             'label' => 'Costos',
+             'route' => 'costos',
+         ),
+         array(
+             'label' => 'Organizacion',
+             'route' => 'organizacion',
+         ),
      ),
  ),
     
@@ -142,7 +171,9 @@ return array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Ponencias' => 'Application\Controller\PonenciasController',
             'Application\Controller\Disertantes' => 'Application\Controller\DisertantesController',
-            'Application\Controller\Calendario' => 'Application\Controller\CalendarioController'
+            'Application\Controller\Calendario' => 'Application\Controller\CalendarioController',
+            'Application\Controller\Costos' => 'Application\Controller\CostosController',
+            'Application\Controller\Organizacion' => 'Application\Controller\CostosController'
         ),
     ),
     'view_manager' => array(
