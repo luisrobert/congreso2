@@ -1,14 +1,35 @@
 /*David*/
 .tuto{ text-align: center;
         background-color: #bce8f1;
-       font-size: 20px;
+       font-size: 30px;
 }
 
-.rojo{
-    background-color: lightsteelblue;
+.colorT{ text-align: center;
+        background-color: lavender;
+}
+
+.colorp{ text-align: center;
+    background-color: #F5F5F5;
     margin: 15px auto 0 auto;
 }
-/*---*/
+
+.color2{ text-align: center; 
+    background-color: #f9f9f9;
+    margin: 15px auto 0 auto;
+}
+
+.color3{ text-align: center;
+    background-color: azure;
+    margin: 15px auto 0 auto;
+}
+
+.confe{ text-align: center;
+        background-color: #bce8f1;
+       font-size: 30px;
+}
+
+
+/*---------------*/
 
 
 .header {
