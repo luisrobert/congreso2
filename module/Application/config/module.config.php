@@ -149,13 +149,6 @@ return array(
          array(
              'label' => 'Organizacion',
              'route' => 'organizacion',
-             'pages' => array(
-                array(
-                    'label' => 'Mapa',
-                    'route' => 'organizacion',
-                    'action' => 'mapa',
-                ),
-               ),  
          ),
      ),
  ),
@@ -180,7 +173,7 @@ return array(
             'Application\Controller\Disertantes' => 'Application\Controller\DisertantesController',
             'Application\Controller\Calendario' => 'Application\Controller\CalendarioController',
             'Application\Controller\Costos' => 'Application\Controller\CostosController',
-            'Application\Controller\Organizacion' => 'Application\Controller\CostosController'
+            'Application\Controller\Organizacion' => 'Application\Controller\OrganizacionController'
         ),
     ),
     'view_manager' => array(
