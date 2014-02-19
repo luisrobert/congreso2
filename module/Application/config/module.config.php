@@ -77,6 +77,16 @@ return array(
                 ),
             ),
             
+            'preinscripciones' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/preinscripciones',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Preinscripciones',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -146,6 +156,11 @@ return array(
              'label' => 'Organizacion',
              'route' => 'organizacion',
          ),
+         
+         array(
+             'label' => 'Preinscripciones',
+             'route' => 'preinscripciones',
+         ),
      ),
  ),
     
@@ -169,8 +184,10 @@ return array(
             'Application\Controller\Disertantes' => 'Application\Controller\DisertantesController',
             'Application\Controller\Calendario' => 'Application\Controller\CalendarioController',
             'Application\Controller\Costos' => 'Application\Controller\CostosController',
-            'Application\Controller\Organizacion' => 'Application\Controller\OrganizacionController'
-        ),
+            'Application\Controller\Organizacion' => 'Application\Controller\OrganizacionController',
+            'Application\Controller\Preinscripciones' => 'Application\Controller\PreinscripcionesController'
+
+            ),
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
