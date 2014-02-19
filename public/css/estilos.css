@@ -4,21 +4,21 @@
        font-size: 30px;
 }
 
-.colorT{ text-align: center;
+.colorT{ text-align: justify;
         background-color: lavender;
 }
 
-.colorp{ text-align: center;
+.colorp{ text-align: justify;
     background-color: #F5F5F5;
     margin: 15px auto 0 auto;
 }
 
-.color2{ text-align: center; 
+.color2{ text-align: justify; 
     background-color: #f9f9f9;
     margin: 15px auto 0 auto;
 }
 
-.color3{ text-align: center;
+.color3{ text-align: justify;
     background-color: azure;
     margin: 15px auto 0 auto;
 }
