@@ -129,6 +129,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', end
 
 }
 
+.centrarimg{
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
 .centrar{
     padding-top: 100px;
     padding-left: 250px;
