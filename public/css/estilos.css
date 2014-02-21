@@ -29,6 +29,32 @@
 }
 
 
+
+
+
+.costos{ text-align: center;   
+         color: powderblue;
+         font-size: 45px;
+}
+
+.estudiante{ text-align: center;
+            font-size: 28px;
+            background-color:#f9f9f9 ;
+}
+
+.profecional{ text-align: center;
+            font-size: 28px;
+            background-color: #fcf8e3;
+}
+
+.preE{ text-align: center;
+        font-size: 23px;
+}
+
+.preP{ text-align: center;
+        font-size: 23px;
+}
+
 /*---------------*/
 
 
