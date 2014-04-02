@@ -1,11 +1,95 @@
-<div class="row">
-    <div class="col-lg-6">Bienvenidos a nuestro modulo de preinscripciones</div>
-    <div class="col-lg-6">
-        <ul>
-            <li>usuario , Clave</li>
-            <li>Registrarse usuario nuevo</li>
- 
-        </ul>
-        
+<h1>
+    <hr>
+     <?php echo $this->titulo; ?>
+   
+</h1>
+<hr />
+<div class="contenedorform">
+<div class="panel panel-default">
+  <div class="panel-heading">Formulario de Registro</div>
+  <div class="panel-body">
+<!--<div class="contenedorform">-->
+    <?php
+    $form = $this->form;
+    $form->prepare();
+    $form->setAttributes(array(
+        'action'=>$this->url.'/application/preinscripciones/index',
+        'method'=>'post'
+    ));
+    // Get the form label plugin
+    $formLabel = $this->plugin('formLabel');
+
+    // Render the opening tag
+    echo $this->form()->openTag($form);
+    ?>
+
+    <div class="form_element">
+    <?php
+    $name = $form->get('cedula');
+    echo $formLabel->openTag().$name->getOption('label');
+    echo $this->formElementErrors($name);
+    echo $formLabel->closeTag()."<br>";
+    echo $this->formInput($name);
+    ?>
     </div>
+    
+    <div class="form_element">
+    <?php
+    $nombre = $form->get('nombre');
+    echo $formLabel->openTag().$nombre->getOption('label');
+    echo $this->formElementErrors($nombre);
+    echo $formLabel->closeTag()."<br>";
+    echo $this->formInput($nombre);
+    ?>
+    </div>
+    
+     <div class="form_element">
+    <?php
+    $descripcion = $form->get('apellido');
+    echo $formLabel->openTag().$descripcion->getOption('label');
+    echo $this->formElementErrors($descripcion);
+    echo $formLabel->closeTag()."<br>";
+    echo $this->formInput($descripcion);
+    ?>
+    </div>
+
+
+    <div class="form_element">
+    <?php
+    $nombre = $form->get('lugar');
+    echo $formLabel->openTag().$nombre->getOption('label');
+    echo $this->formElementErrors($nombre);
+    echo $formLabel->closeTag()."<br>";
+    echo $this->formInput($nombre);
+    ?>
+    </div>
+    
+     <div class="form_element">
+    <?php
+    $descripcion = $form->get('telefono');
+    echo $formLabel->openTag().$descripcion->getOption('label');
+    echo $this->formElementErrors($descripcion);
+    echo $formLabel->closeTag()."<br>";
+    echo $this->formInput($descripcion);
+    ?>
+    </div>
+   
+     
+     <div class="form_element">
+    <?php
+    $descripcion = $form->get('email');
+    echo $formLabel->openTag().$descripcion->getOption('label');
+    echo $this->formElementErrors($descripcion);
+    echo $formLabel->closeTag()."<br>";
+    echo $this->formInput($descripcion);
+    ?>
+    </div>
+    
+     
+
+    <?php echo $this->formElement($form->get('send')) ?>
+
+    <?php echo $this->form()->closeTag() ?>
+</div>
+  </div>
 </div>

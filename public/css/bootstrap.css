@@ -4908,8 +4908,8 @@ a.badge:focus {
 
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #428bca;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #13EF21;
 }
 
 .nav-pills > li > a > .badge {

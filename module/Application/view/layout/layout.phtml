@@ -16,32 +16,117 @@
                         ->prependStylesheet($this->basePath() . '/css/estilos.css')
                         ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
                         ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+         
+        <!--permite utilizar fuentes de google-->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Akronim&effect=anaglyph|3d-float|shadow-multiple|fire|3d|fire-animation">
 
         <!-- Scripts -->
         <?php echo $this->headScript()
+            ->prependFile($this->basePath() . '/js/holder.js')    
             ->prependFile($this->basePath() . '/js/bootstrap.min.js')
             ->prependFile($this->basePath() . '/js/jquery.min.js')
             ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
         ; ?>
 
+  
+        
     </head>
+    
+    <!--parte del cuerpo de la pagina-->
     <body>
+        
+        
+        
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+        
+        
+<div class="slide_likebox"> 
+<div style="color: rgb(255, 255, 255); padding: 8px 5px 0pt 50px;">
+<span>
+     <div class='likeboxwrap'>
+         <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FCongresoYacuiba%2F1568391650051759&amp;width&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true" 
+                 scrolling="no" 
+                 frameborder="0" 
+                 style="border:none; overflow:hidden; height:290px;" 
+                 allowTransparency="true">
+         
+         </iframe>
+     </div>
+</span>
+</div>
+</div>
+    <style type="text/css"> 
+	.slide_likebox { float:right; width:288px; height:345px; 
+	background: url(https://lh6.googleusercontent.com/-VW_GzzYnZJ0/TkiZQFcBc2I/AAAAAAAABmg/fa9_qWV8Cu4/fb_bg.png) no-repeat !important;
+        display:block;
+        right:-250px;
+        padding:0;
+        position:fixed;
+        top: 130px;
+        z-index:1002; 
+        border-radius:10px; 
+        -moz-border-radius:10px; 
+        -webkit-border-radius:10px; }
+        div.likeboxwrap { margin-top:2px; 
+                      margin-left:-5px; 
+                      width:238px; 
+                      height:325px; 
+                      background-color:#fff; 
+                      overflow:hidden; 
+                      border-radius:10px; 
+                      -moz-border-radius:10px; 
+                      -webkit-border-radius:10px; } 
+        div.likeboxwrap iframe {margin:-1px} 
+    </style>     
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">
+    </script>  
+    <script type="text/javascript">
+        jQuery.noConflict();
+        jQuery(function (){
+        jQuery(".slide_likebox").hover(function(){
+        jQuery(".slide_likebox").stop(true, false).animate({right:"0"},"medium");
+        },function(){
+        jQuery(".slide_likebox").stop(true, false).animate({right:"-250"},"medium");
+        },500);
+        return false;
+        });
+     </script>
+<!--chat facebook-->
+
+
+
+
+<!-- Encabezado de la pagina-->
+        <div class="container fondo1">
         <header>
+                <div class="row container">
+                    <div  class="col-xs-12 logocentral">
+                          
+                    </div>
+                    
+           <!--        <div class="hidden-xs col-sm-4 col-md-4 col-lg-3 centrar">
+                        <a href="https://www.facebook.com/congreso.yacuiba"><img src="<?php echo $this->basePath('img/facebook32.png') ?>" class="img-circle"></a>
+                        <a href=""><img src="<?php echo $this->basePath('img/twitter32.png') ?>" class="img-circle"></a>
+                        <a href=""><img src="<?php echo $this->basePath('img/youtube32.png') ?>" class="img-circle"></a>
+                    </div>
+            -->
+                </div> <!--row-->   
+        </header>
+                  
+        <nav class="navbar navbar-inverse contenedor" role="navigation">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <h2>2do. Congreso de Tecnologias de Informacion y Comunicacion</h2>
-                        <h3>Yacuiba 2014</h3>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        
-                    </div>
-                </div>
-            </div>
-        </header>
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="container">
+                    <div class="col-xs-10">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -51,45 +136,88 @@
                     <a class="navbar-brand" href="<?php echo $this->url('home') ?>">
                         <img src="<?php echo $this->basePath('img/home2.png') ?>" alt="" class="img-circle"/>
                     </a>
+                </div>
+                <div class="collapse navbar-collapse">                   
                     <?php // <-- Add this !!
                      echo $this->navigation('navigation')
                              ->menu()
                              ->setMinDepth(0)
-                             ->setMaxDepth(0)
-                             ->setUlClass('nav navbar-nav');
+                             ->setMaxDepth(0)  
+                             ->setUlClass('nav nav-pills');
                     ?>
-                    
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                                  
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hospedaje <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="ponencias">Hoteles</a></li>
-                            <li><a href="#">Residenciales</a></li>
-                            <li><a href="#">Hostales</a></li>
-                            
-                        </ul>
-                     </li>  
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
+
+
+<!--   <ul class="nav navbar-nav navbar-right">
+        <li> <a href="https://www.facebook.com/congreso.yacuiba"><img src="<?php echo $this->basePath('img/facebook32.png') ?>" class="img-circle"></a>
+        </li>
+
+        <li> <a href=""><img src="<?php echo $this->basePath('img/twitter32.png') ?>" class="img-circle"></a>
+        </li>
+
+        <li> <a href=""><img src="<?php echo $this->basePath('img/youtube32.png') ?>" class="img-circle"></a>
+        </li>
         
-        <div class="container">
+      </ul>
+ -->               </div> 
+                 </div>
+                <div class="col-xs-2 centrar1">
+                        <a href="https://www.facebook.com/congreso.yacuiba"><img src="<?php echo $this->basePath('img/facebook32.png') ?>" class="img-circle"></a>
+                        <a href=""><img src="<?php echo $this->basePath('img/twitter32.png') ?>" class="img-circle"></a>
+                        <a href=""><img src="<?php echo $this->basePath('img/youtube32.png') ?>" class="img-circle"></a>
+                </div>    
+               </div> <!--row-->
+                </div>     
+        </nav>
+ 
             
-            <?php echo $this->navigation('navigation')
-                    ->breadcrumbs()
-                    ->setMinDepth(0)
-                    ->setPartial(array('partial/breadcrumb.phtml', 'Ponencias'));?>
+        <div class="container">
+                      
             <?php echo $this->content; ?>
         </div> <!-- /container -->
         
-            <footer>
-                <br>
-                <p>&copy; 2005 - <?php echo date('M-Y') ?> FCIGCH Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
-                <br>
+        <footer class="container">
+            <hr>
+            <h3>Auspiciadores</h3>
+<div class="row">
+    
+  <div class="col-xs-2 col-md-2">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100x100/#86D3FF:#0F3CFF" alt="...">
+    </a>
+  </div>
+  <div class="col-xs-2 col-md-2">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100x100/#86D3FF:#0F3CFF" alt="...">
+    </a>
+  </div>
+   <div class="col-xs-2 col-md-2">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100x100/#86D3FF:#0F3CFF" alt="...">
+    </a>
+  </div>
+    <div class="col-xs-2 col-md-2">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100x100/#86D3FF:#0F3CFF" alt="...">
+    </a>
+  </div>
+    <div class="col-xs-2 col-md-2">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100x100/#86D3FF:#0F3CFF" alt="...">
+    </a>
+  </div>
+    <div class="col-xs-2 col-md-2">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100x100/#86D3FF:#0F3CFF" alt="...">
+    </a>
+  </div>  
+    
+</div>
+            
+            
+                <p>&copy; Feb/2014 - <?php echo date('M/Y') ?> FCIGCH-UAJMS <?php echo $this->translate('-rf') ?></p>
+                
             </footer>
+        </div>
         <?php echo $this->inlineScript() ?>
     </body>
 </html>

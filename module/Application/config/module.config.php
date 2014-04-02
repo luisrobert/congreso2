@@ -8,6 +8,19 @@
  */
 
 return array(
+'doctrine' => array(
+  'driver' => array(
+    'application_entities' => array(
+      'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+      'cache' => 'array',
+      'paths' => array(__DIR__ . '/../src/Application/Entity')
+    ),
+
+    'orm_default' => array(
+      'drivers' => array(
+        'Application\Entity' => 'application_entities'
+      )
+))), 
     'router' => array(
         'routes' => array(
             //ruta para home
@@ -76,7 +89,18 @@ return array(
                     ),
                 ),
             ),
-            
+
+           'inscripciones' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/inscripciones',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Inscripciones',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+
             'preinscripciones' => array(
                 'type' => 'literal',
                 'options' => array(
@@ -87,6 +111,126 @@ return array(
                     ),
                 ),
             ),
+            
+            'ver' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/ver',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Ver',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            
+            'quienes' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/quienes',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Quienes',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            
+            
+            'misionv' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/misionv',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Misionv',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+
+            'objetivos' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/objetivos',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Objetivos',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+
+            'organiza' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/organiza',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Organiza',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+
+            'cuando' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/cuando',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Cuando',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+
+            'noticias' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/noticias',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Noticias',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+
+            'lugarev' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/lugarev',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Lugarev',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            'contactos' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/contactos',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Contactos',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            'hospedaje' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/hospedaje',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Hospedaje',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            'sitiosi' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route' => '/sitiosi',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Sitiosi',
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -129,7 +273,6 @@ return array(
         ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
- //           'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
         
     ),
@@ -158,8 +301,8 @@ return array(
          ),
          
          array(
-             'label' => 'Preinscripciones',
-             'route' => 'preinscripciones',
+             'label' => 'Inscripciones',
+             'route' => 'inscripciones',
          ),
      ),
  ),
@@ -185,8 +328,19 @@ return array(
             'Application\Controller\Calendario' => 'Application\Controller\CalendarioController',
             'Application\Controller\Costos' => 'Application\Controller\CostosController',
             'Application\Controller\Organizacion' => 'Application\Controller\OrganizacionController',
-            'Application\Controller\Preinscripciones' => 'Application\Controller\PreinscripcionesController'
-
+            'Application\Controller\Inscripciones' => 'Application\Controller\InscripcionesController',
+            'Application\Controller\Preinscripciones' => 'Application\Controller\PreinscripcionesController',
+            'Application\Controller\Ver' => 'Application\Controller\VerController',
+            'Application\Controller\Quienes' => 'Application\Controller\QuienesController',
+            'Application\Controller\Misionv' => 'Application\Controller\MisionvController',
+            'Application\Controller\Objetivos' => 'Application\Controller\ObjetivosController',
+            'Application\Controller\Organiza' => 'Application\Controller\OrganizaController',
+            'Application\Controller\Cuando' => 'Application\Controller\CuandoController',
+            'Application\Controller\Noticias' => 'Application\Controller\NoticiasController',
+            'Application\Controller\Lugarev' => 'Application\Controller\LugarevController',
+            'Application\Controller\Contactos' => 'Application\Controller\ContactosController',
+            'Application\Controller\Hospedaje' => 'Application\Controller\HospedajeController',
+            'Application\Controller\Sitiosi' => 'Application\Controller\SitiosiController'            
             ),
     ),
     'view_manager' => array(
@@ -197,6 +351,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/layout_home'           => __DIR__ . '/../view/layout/layout_home.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',

@@ -1,4 +1,6 @@
 <div class="container">
+    
+
             <!-- espacio para el carrusel-->
             <section id="miSlide" class="carousel slide">
                 <!--circulos indicadores-->
@@ -14,7 +16,7 @@
                     <img src="<?php echo $this->basePath('img/slide1.jpg') ?>" class="adaptar">
                 </div>
                 <div class="item">
-                    <img src="<?php echo $this->basePath('img/slide2_.jpg') ?>" class="adaptar">
+                    <img src="<?php echo $this->basePath('img/slide4.jpg') ?>" class="adaptar">
                 </div>
                 <div class="item">
                     <img src="<?php echo $this->basePath('img/slide3_.jpg') ?>" class="adaptar">
@@ -35,28 +37,29 @@
 
 <div class="row">
 
-    <div class="col-md-4">
+    <div class="col-xs-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo $this->translate('PONENCIAS') ?></h3>
             </div>
             <div class="panel-body centrarimg">
-                <img src="<?php echo $this->basePath('img/expo.jpg') ?>" alt="..." class="img-circle" >
+                <img src="<?php echo $this->basePath('img/expo.jpg') ?>" alt="..." class="img-circle img-responsive" >
                 <div>
                 <p><?php echo sprintf($this->translate('Ingeniero en Sistemas de Información de la Universidad Tecnológica Nacional, Facultad de Córdoba - Argentina. Doctorando en Ciencias Informáticas. Magíster en Ingeniería de Software. Especialista en Gestión Pública. Diplomado Internacional en Gobierno Electrónico y Gestión Pública. '), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="https://github.com/zendframework/zf2/issues">', '</a>') ?></p>
                 </div>
-                <p><a class="btn btn-success pull-right glyphicon glyphicon-plus" href="https://localhost/congreso2/public/ponencias" target="_blank" ></a></p>
+                <p><a class="btn btn-success pull-right glyphicon glyphicon-plus" 
+                      href="<?php echo $this->url('ponencias') ?>" target="_blank" ></a></p>
             </div>
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-xs-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo $this->translate('CALENDARIO') ?></h3>
             </div>
             <div class="panel-body centrarimg">
-                <img src="<?php echo $this->basePath('img/cale.jpg') ?>" alt="..." class="img-circle" >
+                <img src="<?php echo $this->basePath('img/cale.jpg') ?>" alt="..." class="img-circle img-responsive" >
                 <div>
                 <p><?php echo sprintf($this->translate('Ingeniero en Sistemas de Información de la Universidad Tecnológica Nacional, Facultad de Córdoba - Argentina. Doctorando en Ciencias Informáticas. Magíster en Ingeniería de Software. Especialista en Gestión Pública. Diplomado Internacional en Gobierno Electrónico y Gestión Pública. '), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="https://github.com/zendframework/zf2/issues">', '</a>') ?></p>
                 </div>
@@ -65,13 +68,27 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-xs-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo $this->translate('COSTOS') ?></h3>
             </div>
             <div class="panel-body centrarimg">
-                <img src="<?php echo $this->basePath('img/calculadora.jpg') ?>" alt="..." class="img-circle" >
+                <img src="<?php echo $this->basePath('img/calculadora.jpg') ?>" alt="..." class="img-circle img-responsive" >
+                <div>
+                <p><?php echo sprintf($this->translate('Ingeniero en Sistemas de Información de la Universidad Tecnológica Nacional, Facultad de Córdoba - Argentina. Doctorando en Ciencias Informáticas. Magíster en Ingeniería de Software. Especialista en Gestión Pública. Diplomado Internacional en Gobierno Electrónico y Gestión Pública. '), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="https://github.com/zendframework/zf2/issues">', '</a>') ?></p>
+                </div>
+                <p><a class="btn btn-success pull-right glyphicon glyphicon-plus" href="https://localhost/congreso2/public/costos" target="_blank" ></a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('COSTOS') ?></h3>
+            </div>
+            <div class="panel-body centrarimg">
+                <img src="<?php echo $this->basePath('img/calculadora.jpg') ?>" alt="..." class="img-circle img-responsive" >
                 <div>
                 <p><?php echo sprintf($this->translate('Ingeniero en Sistemas de Información de la Universidad Tecnológica Nacional, Facultad de Córdoba - Argentina. Doctorando en Ciencias Informáticas. Magíster en Ingeniería de Software. Especialista en Gestión Pública. Diplomado Internacional en Gobierno Electrónico y Gestión Pública. '), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="https://github.com/zendframework/zf2/issues">', '</a>') ?></p>
                 </div>

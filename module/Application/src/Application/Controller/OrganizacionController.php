@@ -16,7 +16,11 @@ class OrganizacionController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+         $view = new ViewModel();
+        $this->layout('layout/layout_org');
+        $this->layout()->saludo="Hola layout de home";
+        $this->layout()->title="layout-home";
+        return $view;
     }
     public function mapaAction()
     {
