@@ -8,6 +8,24 @@
  */
 
 return array(
+        'san_captcha' => array(
+        'class' => 'image',
+        'options' => array(
+            // using tmp sys dir to generate Captcha images
+            'imgDir' => sys_get_temp_dir(),
+            // feel free to add fonts in Module's font directory
+            'fontDir' => __DIR__.'/../fonts',
+            // if 'font' is not defined, SanCaptcha Module, will pick one randmoly in 'fontDir'
+//          'font' => 'arial.ttf',
+//          'font' => ['arial.ttf', 'Roboto-Regular.ttf'],
+            'width' => 200,
+            'height' => 50,
+            'dotNoiseLevel' => 40,
+            'lineNoiseLevel' => 2
+        ),
+    ),
+
+    
 'doctrine' => array(
   'driver' => array(
     'application_entities' => array(
@@ -23,6 +41,46 @@ return array(
 ))), 
     'router' => array(
         'routes' => array(
+            
+            
+            'SanCaptcha' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/testcaptcha',
+                    'defaults' => array(
+                        'controller'    => 'Application\Controller\Testcaptcha',
+                        'action'        => 'form',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                
+                    'captcha_form' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/[:action[/]]',
+                             'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                                'action' => 'form',                     
+                            ),
+                        ),
+                    ),
+                    
+                    'captcha_form_generate' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    =>  '/captcha/[:id]',
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\Captcha',
+                                'action' => 'generate',                    
+                            ),
+                        ),
+                    ),
+                ),
+            ),            
+            
             //ruta para home
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -340,7 +398,10 @@ return array(
             'Application\Controller\Lugarev' => 'Application\Controller\LugarevController',
             'Application\Controller\Contactos' => 'Application\Controller\ContactosController',
             'Application\Controller\Hospedaje' => 'Application\Controller\HospedajeController',
-            'Application\Controller\Sitiosi' => 'Application\Controller\SitiosiController'            
+            'Application\Controller\Sitiosi' => 'Application\Controller\SitiosiController',
+            'Application\Controller\Captcha' => 'Application\Controller\CaptchaController',
+            'Application\Controller\Testcaptcha' => 'Application\Controller\TestcaptchaController'
+
             ),
     ),
     'view_manager' => array(

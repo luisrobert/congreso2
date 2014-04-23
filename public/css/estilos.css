@@ -139,7 +139,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f7f3', end
   background-position: 0% 0%;
     
     } 
-
+    
  .logocentral {
     
   height: 10em;  
@@ -147,12 +147,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f7f3', end
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -moz-background-size: 100% 100%;
-    background-image: url(../img/BANER.jpg);
+    background-image: url(../img/banner1.jpg);
   border: 0px solid black;
   background-position: 0% 0%;
     
     } 
-   
+
+    
+ .logocentral1 {
+    
+  height: 10em;  
+  background-color:  transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+    background-image: url(../img/plantilla1.jpg);
+  border: 0px solid black;
+  background-position: 0% 0%;
+    
+    } 
+
+    
     
 a {
     color: #FFFFFF;
@@ -251,6 +266,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3ecf4', end
 .fondo1{
     background-color: #ffffff;
 }
+
+
 
 .azul{
     background-color: blue;

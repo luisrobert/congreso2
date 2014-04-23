@@ -13,11 +13,25 @@ use Zend\View\Model\ViewModel;
 use Application\Form\Formularios;
 class VerController extends AbstractActionController
 {
+   
+
     public function indexAction()
     {
+        $this->layout('layout/layout_insc');
+        $this->layout()->saludo="Hola layout de home";
+        $this->layout()->title="layout-insc";
+
+        $captchaService = $this->getServiceLocator()->get('SanCaptcha');        
+        //$form = new TestCaptchaForm($captchaService);
+
+            $form = new Formularios($captchaService);
+            
            if ($this->getRequest()->isPost()) {
 
-                       
+           $form->setData($this->getRequest()->getPost());             
+            if ($form->isValid()) {
+                echo "Captcha Valido ";
+               
             $objectManager = $this->getServiceLocator()
                           ->get('Doctrine\ORM\EntityManager');
             $data = $this->request->getPost();
@@ -36,22 +50,22 @@ class VerController extends AbstractActionController
             echo var_dump($participante->getIdparticipante());
             return $this->redirect()->toUrl($this->getRequest()->getBaseUrl() . '/application/index/index');
         }
+       else {          
+            return array('form' => $form);
+        }
+        
+         }
+
         else {
-            //zona del formulario
-            $form = new Formularios("form");
-//            $id_proveedores = (int) $this->params()->fromRoute('id_proveedores', 0);
-            $valores = array
+        $valores = array
                 (
-                "titulo" => "Registro de Participantes",
+                "titulo" => "Buscar Participante",
                 "form" => $form,
                 'url' => $this->getRequest()->getBaseUrl()
              //   'id_proveedores' => $id_proveedores
             );
             
         $view = new ViewModel($valores);
-        $this->layout('layout/layout_insc');
-        $this->layout()->saludo="Hola layout de home";
-        $this->layout()->title="layout-insc";
         return $view;
         }
          

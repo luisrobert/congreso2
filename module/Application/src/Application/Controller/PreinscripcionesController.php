@@ -11,13 +11,29 @@ namespace Application\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Application\Form\Formularios;
+use Application\Form\TestCaptchaForm;
+
 class PreinscripcionesController extends AbstractActionController
 {
     public function indexAction()
     {
-           if ($this->getRequest()->isPost()) {
+     $this->layout('layout/layout_insc');
+        $this->layout()->saludo="Hola layout de home";
+        $this->layout()->title="layout-insc";
 
-                       
+        
+        $captchaService = $this->getServiceLocator()->get('SanCaptcha');        
+        //$form = new TestCaptchaForm($captchaService);
+
+            $form = new Formularios($captchaService);
+
+           if ($this->getRequest()->isPost()) {
+                           //set data post  
+            $form->setData($this->getRequest()->getPost());
+             
+            if ($form->isValid()) {
+                echo "Captcha Valido ";
+                                
             $objectManager = $this->getServiceLocator()
                           ->get('Doctrine\ORM\EntityManager');
             $data = $this->request->getPost();
@@ -36,10 +52,15 @@ class PreinscripcionesController extends AbstractActionController
             echo var_dump($participante->getIdparticipante());
             return $this->redirect()->toUrl($this->getRequest()->getBaseUrl() . '/application/index/index');
         }
+        
         else {
-            //zona del formulario
-            $form = new Formularios("form");
-//            $id_proveedores = (int) $this->params()->fromRoute('id_proveedores', 0);
+            
+            return array('form' => $form);
+        }
+        
+         }
+
+        else {
             $valores = array
                 (
                 "titulo" => "Registro de Participantes",
@@ -49,9 +70,6 @@ class PreinscripcionesController extends AbstractActionController
             );
             
         $view = new ViewModel($valores);
-        $this->layout('layout/layout_insc');
-        $this->layout()->saludo="Hola layout de home";
-        $this->layout()->title="layout-insc";
         return $view;
         }
          
